@@ -1,33 +1,43 @@
 package com.openclassrooms;
 
+import com.openclassrooms.store.Brand;
 import com.openclassrooms.store.Inventory;
 import com.openclassrooms.store.Mouse;
 import com.openclassrooms.store.Screen;
 
+/**
+ * 
+ * Application entry point
+ * 
+ * @author Abdallah Mansour
+ *
+ */
+
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Inventory POC");
+	/**
+	 * @param args provided arguments are not handled
+	 */
+	public static void main(String[] args) {
 
-        Mouse m = new Mouse("DELL", 20.0);
-        Screen s = new Screen("Samsung", 150.0, "1920x1080");
+		Screen samsungScreen = new Screen(Brand.SAMSUNG, 150.0, "1920x1080");
+		Mouse dellMouse = new Mouse(Brand.DELL, 80.0);
+		Mouse appleMouse = new Mouse(Brand.APPLE, 80.0);
 
-        Inventory inventory = new Inventory();
-        inventory.addScreen(s);
-        inventory.addMouse(m);
+		Inventory inventory = new Inventory();
 
-        for(int i=0; i < inventory.screens.length; i++ ) {
-            if(inventory.screens[i] != null) {
-                System.out.println(inventory.screens[i].brand);
-            }
-        }
+		inventory.addOrUpdateItem(samsungScreen, 5);
 
-        for(int j = 0; j < inventory.mice.length; j++ ) {
-            if(inventory.mice[j] != null) {
-                System.out.println(inventory.mice[j].brand);
-            }
-        }
+		inventory.addOrUpdateItem(dellMouse, 12);
+		inventory.decreaseItemQuantity(dellMouse, 2);
 
+		inventory.decreaseItemQuantity(appleMouse, 2);
 
-    }
+		inventory.displayInventoryOnConsole();
+
+		inventory.decreaseItemQuantity(dellMouse, 12);
+
+		inventory.displayInventoryOnConsole();
+		inventory.displayItemsOnConsole();
+	}
 }

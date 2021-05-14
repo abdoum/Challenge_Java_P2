@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.openclassrooms.store","l":"Brand"},{"p":"com.openclassrooms.store","l":"Inventory"},{"p":"com.openclassrooms.store","l":"Item"},{"p":"com.openclassrooms","l":"Main"},{"p":"com.openclassrooms.store","l":"Mouse"},{"p":"com.openclassrooms.store","l":"Screen"}];updateSearchResults();
