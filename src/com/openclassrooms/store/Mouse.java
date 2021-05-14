@@ -1,13 +1,23 @@
 package com.openclassrooms.store;
 
-public class Mouse {
+/**
+ * Creates a Mouse Item
+ * 
+ */
+public class Mouse extends Item {
 
-    public String brand;
-    public double price;
+	/**
+	 * @param brand the mouse brand
+	 * @param price the mouse price
+	 */
+	public Mouse(Brand brand, double price) {
+		super(brand, price);
+	}
 
-    public Mouse(String a, double b) {
-        this.brand = a; // Updating brand field
-        this.price = b; // Updating price field
-    }
+	@Override
+	public String toString() {
+		return "Mouse{" + super.toString() + "}";
+	}
+
 
 }
